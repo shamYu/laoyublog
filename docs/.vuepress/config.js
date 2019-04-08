@@ -6,29 +6,35 @@ module.exports = {
     ],
     themeConfig: {
      nav: [
-         { text: '主页', link: '/' },
-         { text: 'vue', link: '/zh/home/vue' },
-         { text: 'node', link: '/node' },
-         { text: 'react', link: '/zh/home/react' },
-         { text: 'angular', link: '/angular' },
-         { text: 'vue', link: '/uniapp' },
+         { text: 'Home', link: '/' },
+         { text: 'Vue', link: '/vue/' },
+         { text: 'Node', link: '/node/'},
+         { text: 'React', link: '/react/' },
+         { text: 'Javascript', link: '/js/' },
          { text: 'Github', link: 'https://www.github.com/shamYu' }
      ],
-     sidebar: [
-         {
-            title: '老余前端',
-            collapsable: false,
-            children:[
-                ['/zh/home/','首页'],
-                ['/zh/home/blog','博客'],
-                ['/zh/home/vue','VUE'],
-                ['/zh/home/react','react'],
-                ['/zh/Proxy','跨域问题'],
-                ['/zh/uniapp','uniapp'],
-                ['/zh/Promise-es5','es5实现Promise']
-            ]
-         }
-    ],
+     sidebar:{
+        '/vue/' : [
+            ['','vue'],
+            ['vue_1','iview跨域问题'],
+            ['vue_2','uniapp']
+        ],
+        '/node/' : [
+            ['','node'],
+            ['node_1','快速开始'],
+            ['node_1','配置']
+        ],
+        '/react/' : [
+            ['','react'],
+            ['react_1','快速开始'],
+            ['react_2','配置']
+        ],
+        '/js/' : [
+            ['','js'],
+            ['js_1','es5实现Promise'],
+            ['js_2','js_2']
+        ]
+     },
      sidebarDepth: 2,
      lastUpdated: 'Last Updated'
  }
