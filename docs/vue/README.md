@@ -1,6 +1,6 @@
 ## Vue无法监听到属性变化的三种情况
 1. 删除对象里面的某个属性
-```
+```js
 const app = new Vue({
     el:'#app',
     data() {
@@ -20,7 +20,7 @@ const app = new Vue({
 ```
 2. 修改对象的属性的值
 
-```
+```js
 const app = new Vue({
     el:'#app',
     data() {
@@ -35,7 +35,7 @@ const app = new Vue({
 ```
 3.修改数组下标属性的值。
   很多时候我们都会需要便利一个数组,然后还要==监听数组里面每一个对象的某个属性的值==，来判断需要显示的是哪种效果.
-```
+```html
 <template>
     <div>
         <li v-click="toggleShow(index)" v-for="(item,index) in list">
@@ -44,7 +44,8 @@ const app = new Vue({
         </li>
     </div>
 </template>
-
+```
+```js
 //script
 const app = new Vue({
     el:'#app',

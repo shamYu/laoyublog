@@ -1,6 +1,6 @@
 
 ### ES5实现Promise
-```
+```js
 function MyPromise(fn) {
   this.value;
   this.resolveFunc = function() {};

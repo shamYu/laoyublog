@@ -11,7 +11,7 @@
 然后点击OK。或者使用密令，如下：
  
   
-```
+```js
 gitclone http://gitlab.powerdata.com.cn/platform/platform-module-mixapp.git
 
 <!--切换分支-->
@@ -46,7 +46,7 @@ common【除开icon图标和tab图标的公用图片】;icon[小图标类似字�
 3. 小程序端:直接点击运行 ->运行到微信小程序模拟器-->微信开发者工具.
 ## 四、开发
 1.pages.json配置页面路由
-```
+```json
 {
     "pages": [
         {
@@ -64,7 +64,7 @@ common【除开icon图标和tab图标的公用图片】;icon[小图标类似字�
 				// "enablePullDownRefresh":true, // 下拉刷新页面都要加上
 				"app-plus": {
 					"titleNView": false
-**				}**
+				}
 			}
 		}
     ]
@@ -74,13 +74,15 @@ common【除开icon图标和tab图标的公用图片】;icon[小图标类似字�
 2. 页面开发模版是使用vue的语法，[还不熟悉vue的请移步vue学习](http://www.runoob.com/vue2/vue-tutorial.html),当然还有部分VUE语法不支持，比如:1. filter不支持。2. 非H5端不支持在 template 内使用 methods 中的函数。3. 不支持纯HTML等等，[具体差异详情请看这里](https://uniapp.dcloud.io/use)
 3. 页面开发示例。
     
-```
+```html
 <template>
 	<view>
 		//templatel里面写静态页面
 		{{title}}
 	</view>
 </template>
+```
+```js
 <script>
     //script里面编写JS脚本
 	export default {
@@ -103,13 +105,15 @@ common【除开icon图标和tab图标的公用图片】;icon[小图标类似字�
 ```
 4.组件使用示例
 
-```
+```html
 <template>
 	<view>
 	<!--kebab-case命名-->
 		<pd-uploader :uploadConfig="uploadConfig"></pd-uploader>
 	</view>
 </template>
+```
+```js
 <script>
     //首先引入组件
     import pdUploader from '@/powerapp/components/pd-uoloader'  
@@ -132,9 +136,10 @@ common【除开icon图标和tab图标的公用图片】;icon[小图标类似字�
 	}
 </script>
 ```
+
 uni-app内部封装了很多组件，社区有丰富的组件可提供使用,[详情请移步这里](https://uniapp.dcloud.io/component/README)
 5. 常用的通用方法调用
-```
+```js
 //数据请求
 this.$pdResource.service({
                     data:{

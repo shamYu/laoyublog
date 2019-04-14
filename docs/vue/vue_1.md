@@ -1,6 +1,6 @@
 ### 1.在webpack.dev.config.js 配置
 
-```
+```js
 module.exports = merge(webpackBaseConfig, {
     devtool: '#source-map',
     .....
@@ -23,7 +23,7 @@ module.exports = merge(webpackBaseConfig, {
 
 ### 2.Login.vue
 
-```
+```js
 import  Axios  from 'axios'
         Axios({
                 method:'post',
