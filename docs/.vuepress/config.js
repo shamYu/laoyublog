@@ -1,6 +1,6 @@
 module.exports = {
-    title: '老余教你写前端', 
-    description: '老余的博客',
+    title: '老余的博客', 
+    description: 'Welcome to My VuePress site',
     head:[
         
     ],
@@ -30,8 +30,8 @@ module.exports = {
             ['react_2','配置']
         ],
         '/js/' : [
-            ['','js'],
-            ['js_1','es5实现Promise'],
+            ['','es5实现Promise'],
+            ['js_1','js_1'],
             ['js_2','js_2']
         ]
      },

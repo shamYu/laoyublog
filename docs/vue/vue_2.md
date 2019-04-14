@@ -1,4 +1,4 @@
-### 一、开发环境配置
+## 一、开发环境配置
 1.下载开发工具
 - HBuilderX：[下载地址](http://tools.powerdata.com.cn/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/powerdata/%E5%BC%80%E5%8F%91%E5%BF%85%E5%A4%87/windows/HBuilderX.1.6.2.20190220.full.zip)，下载完后直接安装。
 - 微信开发者工具：<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">下载地址</a>下载完后直接安装。
@@ -22,7 +22,7 @@ gitclone http://gitlab.powerdata.com.cn/platform/platform-module-mixapp.git
 2. 使用HBuilderX打开克隆下来的代码.HBuilderX -> 文件 -> 打开目录 ->选中打开。
 3. 使用pages.json 文件用来对 app 进行全局配置，决定页面文件的路径、窗口表现、设置多 tab 等。[详情请移步这里](https://uniapp.dcloud.io/collocation/pages)
 
-### 二、目录结构
+## 二、目录结构
 1. powerapp目录表示是框架相关的东西；【除了store外】
 2. 必备调试工具：HBuilderX,微信开发者工具；
 3. common目录放公用的css和js文件，目录下：
@@ -39,12 +39,12 @@ common【除开icon图标和tab图标的公用图片】;icon[小图标类似字�
 12. store目录放置vuex的地方
 13. pages.json：用来对 uni-app 进行全局配置，决定页面文件的路径、窗口表现、设置多 tab
 14. manifest.json：是应用的配置文件，用于指定应用的名称、图标、权限等。
-### 三、运行代码。
+## 三、运行代码。
 1. H5端:直接点击HBuilder上面的运行 -> 运行到浏览器 -> Chrome
 2. andriod:手机连接电脑,手机进入设置 -->开发者模式-->打开USB调试模式-->直接点击HBuilder上面的运行 -> 运行到手机或者模拟器.==(==注意：如果一直显示未监测到任何手机,就进入设置--》开发者选项-->关闭USB调试再打开,如果再监测不到，就重启一下电脑,再执行一下2步==骤)==
 3. IOS:准备苹果手机和原装数据线，链接电脑后，在手机上点击信任此电脑,然后点击HBuilder上面的运行.
 3. 小程序端:直接点击运行 ->运行到微信小程序模拟器-->微信开发者工具.
-### 四、开发
+## 四、开发
 1.pages.json配置页面路由
 ```
 {
@@ -158,7 +158,7 @@ this.$pdStorage.get(key)        // 取
 ```     
 
 
-###  五、打包发布
+##  五、打包发布
 1.云打包:打开HBuilderX --->点击发行---->云打包。
 1.     andriod：如果有证书可以使用自己的证书,没有就使用DCloud证书打包
 2.     IOS:准备好苹果证书,生成profile文件,获取私钥密码.再打包
