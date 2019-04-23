@@ -9,7 +9,8 @@ module.exports = {
          { text: 'Home', link: '/' },
          { text: 'Vue', link: '/vue/' },
          { text: 'Node', link: '/node/'},
-         { text: 'React', link: '/react/' },
+        //  { text: 'React', link: '/react/' },
+         { text: 'Angular', link: '/angular/' },
          { text: 'Javascript', link: '/js/' },
          { text: 'Github', link: 'https://www.github.com/shamYu' }
      ],
@@ -29,10 +30,13 @@ module.exports = {
             ['react_1','快速开始'],
             ['react_2','配置']
         ],
+         '/angular/':[
+             ['','angularJS自定义directive之带参方法&传递']
+         ],
         '/js/' : [
-            ['','es5实现Promise'],
-            ['js_1','js_1'],
-            ['js_2','js_2']
+            ['','es5实现Promise']
+            // ['js_1','js_1'],
+            // ['js_2','js_2']
         ]
      },
      sidebarDepth: 2,
