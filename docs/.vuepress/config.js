@@ -18,7 +18,8 @@ module.exports = {
         '/vue/' : [
             ['','vue'],
             ['vue_1','iview跨域问题'],
-            ['vue_2','uniapp']
+            ['vue_2','uniapp'],
+            ['vue_3','vue3.0配置vue.config.js']
         ],
         '/node/' : [
             ['','node'],
