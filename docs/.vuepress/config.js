@@ -19,7 +19,8 @@ module.exports = {
             ['','vue'],
             ['vue_1','iview跨域问题'],
             ['vue_2','uniapp'],
-            ['vue_3','vue3.0配置vue.config.js']
+            ['vue_3','vue3.0配置vue.config.js'],
+            ['vue_4','vvue-cli3.0多页面打包']
         ],
         '/node/' : [
             ['','node'],
