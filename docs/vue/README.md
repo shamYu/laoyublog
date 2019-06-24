@@ -1,72 +1,51 @@
-## Vue无法监听到属性变化的三种情况
-1. 删除对象里面的某个属性
+### vue数据双向绑定是通过数据劫持结合发布者-订阅者模式的方式来实现的.
 ```js
-const app = new Vue({
-    el:'#app',
-    data() {
-        userInfo: {
-            name:'cherry'
-        }
-    },
-    methods: {
-        changeName () {
-            delete this.userInfo.name
-            //vue无法对name进行相应   get/set检测不了 
-            alert(this.userInfo.name)
-            //Vue提供了vm.$delete方法hack //this.$delete(this.userInfo,'name')
-        }
-    }
-})
-```
-2. 修改对象的属性的值
 
-```js
-const app = new Vue({
-    el:'#app',
-    data() {
-        userInfo: {}
-    },
-    created () {
-        this.userInfo.name = 'mark'
-        // vue无法对name进行相应因为详情已经被Observer
-        // Vue提供了$set方法进行hack this.$set(this.userInfo,'name','unchange')
+    const  Observe = function(data){
+     if(data && typeof data !== 'object'){
+          return
+     }
+     //取出所有属性，进行便利
+      Object.keys(data).forEach(function(key){
+          defineReactive(data,key,data[key])
+      })
     }
-})
-```
-3.修改数组下标属性的值。
-  很多时候我们都会需要便利一个数组,然后还要==监听数组里面每一个对象的某个属性的值==，来判断需要显示的是哪种效果.
-```html
-<template>
-    <div>
-        <li v-click="toggleShow(index)" v-for="(item,index) in list">
-            
-            <div v-show="list[index].isSHow">XXX</div>
-        </li>
-    </div>
-</template>
-```
-```js
-//script
-const app = new Vue({
-    el:'#app',
-    data(){
-        list:[]   
-    },
-    created() {
-        axios.get('/xxx').then(res => {
-            this.list = res.list  //后台数据[{isSHow:false,name:'cherry'},{isSHow:false,name:'cherry'},{isSHow:false,name:'cherry'}]
+    
+    function defineReactive(data,key,val){
+        //递归办理监听子属性
+        var dep = new Dep();
+        Observe(val)
+        Object.defineProperty(data,key,{
+               enumerable: true, // 可枚举
+               configurable: false, // 不能再define
+               get:function(){
+                    // 由于需要在闭包内添加watcher，所以通过Dep定义一个全局target属性，暂存watcher, 添加完移除
+                    Dep.target && Dep.addDep(Dep.target)
+                    return val
+               },
+               set:function(newVal){
+                    if(val === newVal) return
+                    val = newVal;
+                    dep.notify(); //通知所有订阅者
+               }
         })
-    },
-    methods: {
-    //点击
-        toggleShow(index){
-            this.list[index].isSHow = !this.list[index].isSHow
-            //我想让点击当前的li，实现li下面的div显示隐藏，很明显，你会发现页面上的UI没有任何变化,根本新检测不到。
-            //就算你用$watch，进行深度检测也没用.
-            //这里你就只用 this.$forceUpdate()来处理页面刷新了。
-        }
-        
     }
-})
-```
+    
+    
+    function Dep(){
+        this.subs = [];
+    }
+    Dep.prototype = {
+        addSub:function(sub){
+            //添加订阅者信息
+            this.subs.push(sub)
+        },
+        notify:function(){
+          //视图更新
+            this.subs.forEach(function(sub){
+                sub.update()
+            })
+        }
+    }
 
+```

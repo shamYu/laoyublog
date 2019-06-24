@@ -14,7 +14,7 @@ cd docs/.vuepress/dist
 
 git init
 git add -A
-git commit -m 'vue.config.js配置提交'
+git commit -m 'vue、vuex原理提交'
 
 # 如果发布到 https://<USERNAME>.github.io
 # git remote add origin https://github.com/shamYu/shamYu.github.io.git

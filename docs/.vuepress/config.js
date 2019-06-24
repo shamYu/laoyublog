@@ -8,7 +8,7 @@ module.exports = {
      nav: [
          { text: 'Home', link: '/' },
          { text: 'Vue', link: '/vue/' },
-         { text: 'Node', link: '/node/'},
+        //  { text: 'Node', link: '/node/'},
         //  { text: 'React', link: '/react/' },
          { text: 'Angular', link: '/angular/' },
          { text: 'Javascript', link: '/js/' },
@@ -16,7 +16,9 @@ module.exports = {
      ],
      sidebar:{
         '/vue/' : [
-            ['','vue'],
+            ['','Vue响应式原理'],
+            ['vue_6','Vuex工作原理'],
+            ['vue_5','Vue缺陷'],
             ['vue_1','iview跨域问题'],
             ['vue_2','uniapp'],
             ['vue_3','vue3.0配置vue.config.js'],
@@ -36,9 +38,8 @@ module.exports = {
              ['','angularJS自定义directive之带参方法&传递']
          ],
         '/js/' : [
-            ['','es5实现Promise']
-            // ['js_1','js_1'],
-            // ['js_2','js_2']
+            ['','es5实现Promise'],
+            ['js_1','工作的笔记']
         ]
      },
      sidebarDepth: 2,
